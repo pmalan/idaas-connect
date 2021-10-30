@@ -90,8 +90,9 @@ public class HL7Processor extends RouteBuilder {
                     .convertBodyTo(String.class)
                     .setHeader("CamelFhir.resource",simple("${header.ce-resource}"))
                     .setHeader("CamelFhir.serverUrl",simple("https://fhir-server.apps.os.pietersmalan.com"))
-                    .to("fhir:create/resource?encoding=JSON&inBody=resourceAsString&fhirVersion=R4&serverUrl=https://fhir-server.apps.os.pietersmalan.com/fhir/&exchangePattern=InOut")
-                    .convertBodyTo(String.class)
+                    .to("fhir:create/resource?encoding=JSON&inBody=resourceAsString&fhirVersion=R4&serverUrl=https://fhir-server.apps.os.pietersmalan.com/fhir/&exchangePattern=InOut&prettyPrint=true&summary=TRUE")
+                    .marshal().fhirJson("R4")
+                    .log("Patient created successfully: ${body}")
                     .to("log:info?multiline=true&showAll=true")
                 .when(header("ce-operation").isEqualTo("GET"))
                     .to("fhir:read/resourceById?encoding=JSON&serverUrl=https://fhir-server.apps.os.pietersmalan.com");
