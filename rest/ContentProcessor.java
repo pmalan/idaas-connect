@@ -35,6 +35,7 @@ public class ContentProcessor extends RouteBuilder {
 
         .setBody()
         .simple("${body[payload]}")
+        .convertBodyTo(String.class)
         .to("knative:endpoint/default");
 
   }

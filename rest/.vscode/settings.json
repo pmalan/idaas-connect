@@ -1,6 +1,7 @@
 {
     "java.project.referencedLibraries": [
         "lib/**/*.jar",
-        "/home/psmalan/.config/Code/User/globalStorage/redhat.vscode-camelk/java-dependencies-3.11.0/dependencies/*.jar"
+        "/home/psmalan/.config/Code/User/globalStorage/redhat.vscode-camelk/java-dependencies-3.11.0/dependencies/*.jar",
+        "/Users/psmalan/Library/Application Support/Code/User/globalStorage/redhat.vscode-camelk/java-dependencies-3.11.0/dependencies/*.jar"
     ]
 }
