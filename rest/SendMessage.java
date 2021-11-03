@@ -28,10 +28,10 @@ public class SendMessage extends RouteBuilder {
         .setBody()
           .simple("iDaas: ${body[resourceType]} with ID: ${body[id]} successful")
           // properties:
-          //authorizationToken: '2005542532:AAGCekO5pbXrcJqinfnoQick-hSW1cx16r8'
+          //authorizationToken: 
       //chatId: t.me/pietersmalan_bot
       //message: Hello world
-        .to("telegram:bots?authorizationToken=2005542532:AAGCekO5pbXrcJqinfnoQick-hSW1cx16r8&chatId=2083772066");
+        .to("telegram:bots?authorizationToken=8&chatId=");
 
   }
 }
